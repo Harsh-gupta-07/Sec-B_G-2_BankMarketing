@@ -6,9 +6,8 @@ Use this file to store the final public links for your Tableau deliverables.
 
 | Item | Link | Notes |
 |---|---|---|
-| Tableau Public Dashboard | _Paste URL here_ | _Main submission link_ |
-| Workbook / Story Link | _Paste URL here if applicable_ | _Optional_ |
-| Demo Recording | _Paste URL here if applicable_ | _Optional_ |
+| Tableau Public Dashboard | https://public.tableau.com/views/Bank_Marketing_Analysis_17773884323250/CUSTOMERSEGMENTATIONSUBSCRIPTIONPROFILE?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+
 
 ## Screenshot Checklist
 
