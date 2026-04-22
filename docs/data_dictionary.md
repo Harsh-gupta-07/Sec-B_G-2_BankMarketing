@@ -33,7 +33,7 @@ Each row represents one client contact record from the UCI Bank Marketing datase
 | pdays | integer | Days since the client was last contacted, or `-1` if never contacted before | -1 | EDA, statistical analysis, Tableau | Convert `-1` to a `previously_contacted` flag |
 | previous | integer | Number of contacts performed before this campaign | 0 | EDA, statistical analysis, Tableau | Keep numeric |
 | poutcome | string | Outcome of the previous campaign | unknown | EDA, statistical analysis, Tableau | Keep source categories |
-| y | string | Whether the client subscribed to a term deposit | no | All notebooks | Convert to binary `target_flag` in cleaned data |
+| y | string | Whether the client subscribed to a term deposit | no | All notebooks |
 
 ## Derived Columns
 
