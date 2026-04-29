@@ -162,7 +162,7 @@ Store dashboard screenshots in [`tableau/screenshots/`](tableau/screenshots/) an
 ## Repository Structure
 
 ```text
-SectionName_TeamID_ProjectName/
+Sec-B_G-2_BankMarketing/
 |
 |-- README.md
 |
@@ -246,42 +246,42 @@ The project follows a structured 7-step workflow:
 
 **GitHub Repository**
 
-- [ ] Public repository created with the correct naming convention (`SectionName_TeamID_ProjectName`)
-- [ ] All notebooks committed in `.ipynb` format
-- [ ] `data/raw/` contains the original, unedited dataset
-- [ ] `data/processed/` contains the cleaned pipeline output
-- [ ] `tableau/screenshots/` contains dashboard screenshots
-- [ ] `tableau/dashboard_links.md` contains the Tableau Public URL
-- [ ] `docs/data_dictionary.md` is complete
-- [ ] `README.md` explains the project, dataset, and team
-- [ ] All members have visible commits and pull requests
+- [x] Public repository created with the correct naming convention (`Sec-B_G-2_BankMarketing`)
+- [x] All notebooks committed in `.ipynb` format
+- [x] `data/raw/` contains the original, unedited dataset
+- [x] `data/processed/` contains the cleaned pipeline output
+- [x] `tableau/screenshots/` contains dashboard screenshots
+- [x] `tableau/dashboard_links.md` contains the Tableau Public URL
+- [x] `docs/data_dictionary.md` is complete
+- [x] `README.md` explains the project, dataset, and team
+- [x] All members have visible commits and pull requests
 
 **Tableau Dashboard**
 
-- [ ] Published on Tableau Public and accessible via public URL
-- [ ] At least one interactive filter included
-- [ ] Dashboard directly addresses the business problem
+- [x] Published on Tableau Public and accessible via public URL
+- [x] At least one interactive filter included
+- [x] Dashboard directly addresses the business problem
 
 **Project Report**
 
-- [ ] Final report exported as PDF into `reports/`
-- [ ] Cover page, executive summary, sector context, problem statement
-- [ ] Data description, cleaning methodology, KPI framework
-- [ ] EDA with written insights, statistical analysis results
-- [ ] Dashboard screenshots and explanation
-- [ ] 8-12 key insights in decision language
-- [ ] 3-5 actionable recommendations with impact estimates
-- [ ] Contribution matrix matches GitHub history
+- [x] Final report exported as PDF into `reports/`
+- [x] Cover page, executive summary, sector context, problem statement
+- [x] Data description, cleaning methodology, KPI framework
+- [x] EDA with written insights, statistical analysis results
+- [x] Dashboard screenshots and explanation
+- [x] 8-12 key insights in decision language
+- [x] 3-5 actionable recommendations with impact estimates
+- [x] Contribution matrix matches GitHub history
 
 **Presentation Deck**
 
-- [ ] Final presentation exported as PDF into `reports/`
-- [ ] Title slide through recommendations, impact, limitations, and next steps
+- [x] Final presentation exported as PDF into `reports/`
+- [x] Title slide through recommendations, impact, limitations, and next steps
 
 **Individual Assets**
 
-- [ ] DVA-oriented resume updated to include this capstone
-- [ ] Portfolio link or project case study added
+- [x] DVA-oriented resume updated to include this capstone
+- [x] Portfolio link or project case study added
 
 ---
 
@@ -291,18 +291,18 @@ This table must match evidence in GitHub Insights, PR history, and committed fil
 
 | Team Member | Dataset and Sourcing | ETL and Cleaning | EDA and Analysis | Statistical Analysis | Tableau Dashboard | Report Writing | PPT and Viva |
 |---|---|---|---|---|---|---|---|
-| _Member 1_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 2_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 3_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 4_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 5_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 6_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
+| Harshvardhan Gupta | ✅ | ✅ | ✅ | ✅ |  |  |  |
+| Karthik Madaan |  |  |  | ✅ | ✅ | ✅ | ✅ |
+| Dev Tyagi |  |  |  | ✅ |  | ✅ | ✅ |
+| Sitanshu Tiwari |  |  |  |  | ✅ |  |  |
+| Siddarth Dangi |  |  |  |  |  |  |  |
+| Sathvik Mani Tripathi |  |  |  |  |  |  |  |
 
 _Declaration: We confirm that the above contribution details are accurate and verifiable through GitHub Insights, PR history, and submitted artifacts._
 
-**Team Lead Name:** _____________________________
+**Team Lead Name:** Harshvardhan Gupta
 
-**Date:** _______________
+**Date:** 26 April 2026
 
 ---
 
