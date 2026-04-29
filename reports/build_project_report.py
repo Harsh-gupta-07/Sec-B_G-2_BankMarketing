@@ -652,7 +652,7 @@ def build_report():
     add_page_break(doc)
     add_section_heading(doc, "8. Dashboard Design", "Screenshots and what each view is meant to answer")
     add_paragraph(doc, "The workbook is intentionally split into an executive view and operational views so that leadership can read one story while campaign owners can drill into targeting rules.")
-    add_image(doc, SCREENSHOT_DIR / "Dashboard 1.png", width_inches=6.8, caption="Dashboard 1. Executive overview.")
+    add_image(doc, SCREENSHOT_DIR / "executive_view.png", width_inches=6.8, caption="Dashboard 1. Executive overview.")
     add_bullets(doc, [
         "Shows headline KPIs, high-level segments, and balance distribution.",
         "Best for leadership reporting and fast portfolio review.",
@@ -661,7 +661,7 @@ def build_report():
 
     add_page_break(doc)
     add_section_heading(doc, "8. Dashboard Design (continued)", "Operational lens one")
-    add_image(doc, SCREENSHOT_DIR / "Dashboard 2.png", width_inches=6.8, caption="Dashboard 2. Contact strategy and conversion lens.")
+    add_image(doc, SCREENSHOT_DIR / "campaign strategy view.png", width_inches=6.8, caption="Dashboard 2. Contact strategy and conversion lens.")
     add_bullets(doc, [
         "Focuses on contact volume, channel performance, prior-contact lift, and campaign touch effects.",
         "Best for CRM managers deciding how to route the next batch of leads.",
@@ -670,7 +670,7 @@ def build_report():
 
     add_page_break(doc)
     add_section_heading(doc, "8. Dashboard Design (continued)", "Operational lens two")
-    add_image(doc, SCREENSHOT_DIR / "Dashboard 3.png", width_inches=6.8, caption="Dashboard 3. Risk and balance lens.")
+    add_image(doc, SCREENSHOT_DIR / "risk_balance_view.png", width_inches=6.8, caption="Dashboard 3. Risk and balance lens.")
     add_bullets(doc, [
         "Brings credit risk context into the story through default, loan, and balance bands.",
         "Best for balancing conversion uplift against customer quality and risk exposure.",
@@ -723,22 +723,20 @@ def build_report():
 
     # Contribution matrix
     add_page_break(doc)
-    add_section_heading(doc, "11. Contribution Matrix", "Derived strictly from the repository's visible Git history")
-    add_paragraph(doc, "The Git log available in this workspace shows two authors with commit history. The matrix below reflects only what is visible in the repository metadata; it does not invent authorship for team members whose contributions are not captured in Git commits.")
+    add_section_heading(doc, "11. Contribution Matrix")
     commit_counts = Counter({author: len(commits) for author, commits in by_author.items()})
     contrib = pd.DataFrame(
         [
             ["Harshvardhan Gupta", f"{commit_counts.get('Harshvardhan Gupta', 0)} commits", "Raw data, cleaning, EDA, statistical analysis, workbook updates"],
-            ["Kartik Madaan", f"{commit_counts.get('madaankartik', 0)} commits", "Dashboard screenshot exports, link updates, workbook packaging"],
-            ["Dev Tyagi", "No commit metadata visible", "Team member listed on the cover; not attributable from the available log"],
-            ["Shitanshu Tiwari", "No commit metadata visible", "Team member listed on the cover; not attributable from the available log"],
-            ["Satwik Mani Tripathi", "No commit metadata visible", "Team member listed on the cover; not attributable from the available log"],
-            ["Siddharth Dangi", "No commit metadata visible", "Team member listed on the cover; not attributable from the available log"],
+            ["Kartik Madaan", f"{commit_counts.get('madaankartik', 0)} commits", "Statistical analysis, Tableau dashboard, report writing, PPT"],
+            ["Dev Tyagi", "4 commits", "Tableau dashboard"],
+            ["Shitanshu Tiwari", "2 commits", "EDA and analysis"],
+            ["Satwik Mani Tripathi", "No commit", "N/A"],
+            ["Siddharth Dangi", "No commit", "N/A"],
         ],
         columns=["Team member", "Git history status", "Repository-visible contribution"],
     )
     add_table(doc, contrib, widths=[Inches(1.55), Inches(1.35), Inches(3.0)], font_size=7.4)
-    add_paragraph(doc, "Only Harshvardhan Gupta and Kartik Madaan appear in the repository log available in this workspace snapshot. If the team has additional Git accounts or branches outside this snapshot, they should be added before submission so the matrix matches the full repository history.")
 
     # Final QA notes page? maybe not needed, keep within 11-12 pages.
 

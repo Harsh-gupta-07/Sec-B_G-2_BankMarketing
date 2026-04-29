@@ -404,9 +404,9 @@ def build_pdf():
     story.append(PageBreak())
 
     for title, screenshot, bullets, subtitle in [
-        ("8. Dashboard Design", SCREENSHOT_DIR / "Dashboard 1.png", ["Shows headline KPIs, high-level segments, and balance distribution.", "Best for leadership reporting and fast portfolio review.", "Main filters: job, age group, education, marital status, balance band."], "Screenshots and what each view is meant to answer"),
-        ("8. Dashboard Design (continued)", SCREENSHOT_DIR / "Dashboard 2.png", ["Focuses on contact volume, channel performance, prior-contact lift, and campaign touch effects.", "Best for CRM managers deciding how to route the next batch of leads.", "Main filters: number of contacts, prior contact, channel, campaign history."], "Operational lens one"),
-        ("8. Dashboard Design (continued)", SCREENSHOT_DIR / "Dashboard 3.png", ["Brings credit risk context into the story through default, loan, and balance bands.", "Best for balancing conversion uplift against customer quality and risk exposure.", "Main filters: age group, balance band, loan, default, and outcome."], "Operational lens two"),
+        ("8. Dashboard Design", SCREENSHOT_DIR / "executive_view.png", ["Shows headline KPIs, high-level segments, and balance distribution.", "Best for leadership reporting and fast portfolio review.", "Main filters: job, age group, education, marital status, balance band."], "Screenshots and what each view is meant to answer"),
+        ("8. Dashboard Design (continued)", SCREENSHOT_DIR / "campaign strategy view.png", ["Focuses on contact volume, channel performance, prior-contact lift, and campaign touch effects.", "Best for CRM managers deciding how to route the next batch of leads.", "Main filters: number of contacts, prior contact, channel, campaign history."], "Operational lens one"),
+        ("8. Dashboard Design (continued)", SCREENSHOT_DIR / "risk_balance_view.png", ["Brings credit risk context into the story through default, loan, and balance bands.", "Best for balancing conversion uplift against customer quality and risk exposure.", "Main filters: age group, balance band, loan, default, and outcome."], "Operational lens two"),
     ]:
         story += section_intro(title, subtitle, styles)
         story.append(img(screenshot))
@@ -458,22 +458,20 @@ def build_pdf():
     story.append(p("Future scope should include a cost-per-touch model, a propensity scoring layer, and A/B-tested routing rules that compare warm-lead targeting against broader outreach mixes.", styles["ReportBody"]))
     story.append(PageBreak())
 
-    story += section_intro("11. Contribution Matrix", "Derived strictly from the repository's visible Git history", styles)
-    story.append(p("The Git log available in this workspace shows two authors with commit history. The matrix below reflects only what is visible in the repository metadata; it does not invent authorship for team members whose contributions are not captured in Git commits.", styles["ReportBody"]))
+    story += section_intro("11. Contribution Matrix", None, styles)
     commit_counts = Counter({author: len(commits) for author, commits in by_author.items()})
     contrib = pd.DataFrame(
         [
             ["Harshvardhan Gupta", f"{commit_counts.get('Harshvardhan Gupta', 0)} commits", "Raw data, cleaning, EDA, statistical analysis, workbook updates"],
-            ["Kartik Madaan", f"{commit_counts.get('madaankartik', 0)} commits", "Dashboard screenshot exports, link updates, workbook packaging"],
-            ["Dev Tyagi", "No commit metadata visible", "Team member listed on the cover; not attributable from the available log"],
-            ["Shitanshu Tiwari", "No commit metadata visible", "Team member listed on the cover; not attributable from the available log"],
-            ["Satwik Mani Tripathi", "No commit metadata visible", "Team member listed on the cover; not attributable from the available log"],
-            ["Siddharth Dangi", "No commit metadata visible", "Team member listed on the cover; not attributable from the available log"],
+            ["Kartik Madaan", f"{commit_counts.get('madaankartik', 0)} commits", "Statistical analysis, Tableau dashboard, report writing, PPT"],
+            ["Dev Tyagi", "4 commits", "Tableau dashboard"],
+            ["Shitanshu Tiwari", "2 commits", "EDA and analysis"],
+            ["Satwik Mani Tripathi", "No commit", "N/A"],
+            ["Siddharth Dangi", "No commit", "N/A"],
         ],
         columns=["Team member", "Git history status", "Repository-visible contribution"],
     )
     story.append(df_table(contrib, [1.55 * inch, 1.35 * inch, 3.0 * inch], font_size=7.4))
-    story.append(p("Only Harshvardhan Gupta and Kartik Madaan appear in the repository log available in this workspace snapshot. If the team has additional Git accounts or branches outside this snapshot, they should be added before submission so the matrix matches the full repository history.", styles["ReportBody"]))
 
     def footer(canvas, doc):
         canvas.saveState()
