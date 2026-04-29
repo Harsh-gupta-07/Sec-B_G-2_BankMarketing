@@ -33,43 +33,43 @@ If you are working in Google Colab:
 
 ---
 
-## Project Overview
+### Project Overview
 
 | Field | Details |
 |---|---|
-| **Project Title** | _To be filled by team_ |
-| **Sector** | _e.g. Retail, Finance, Healthcare, EdTech_ |
-| **Team ID** | _e.g. DVA-B1-T3_ |
-| **Section** | _To be filled by team_ |
-| **Faculty Mentor** | _To be filled by team_ |
-| **Institute** | Newton School of Technology |
-| **Submission Date** | _To be filled by team_ |
+| **Project Title** | Bank Term Deposit Campaign Intelligence |
+| **Sector** | Finance / Bank Marketing |
+| **Team ID** | Sec-B G-2 |
+| **Section** | Sec-B |
+| **Faculty Mentor** | To be updated |
+| **Institute** | Newton School of Technology, Rishihood University |
+| **Submission Date** | 29 April 2026 |
 
 ### Team Members
 
 | Role | Name | GitHub Username |
 |---|---|---|
-| Project Lead | _Name_ | `github-handle` |
-| Data Lead | _Name_ | `github-handle` |
-| ETL Lead | _Name_ | `github-handle` |
-| Analysis Lead | _Name_ | `github-handle` |
-| Visualization Lead | _Name_ | `github-handle` |
-| Strategy Lead | _Name_ | `github-handle` |
-| PPT and Quality Lead | _Name_ | `github-handle` |
+| Project Lead | Harshvardhan Gupta | `Harshvardhan Gupta` |
+| Data Lead | Kartik Madaan | `madaankartik` |
+| ETL Lead | Dev Tyagi | `To be updated` |
+| Analysis Lead | Shitanshu Tiwari | `To be updated` |
+| Visualization Lead | Satwik Mani Tripathi | `To be updated` |
+| Strategy Lead | Siddharth Dangi | `To be updated` |
+| PPT and Quality Lead | Kartik Madaan | `madaankartik` |
 
 ---
 
 ## Business Problem
 
-_Describe the sector context, the decision-maker this project serves, and the core business challenge being addressed. Keep this to 3-5 sentences written in plain language, as if addressing a senior stakeholder._
+Retail banking campaigns often contact many clients, but only a small share subscribe to a term deposit. The bank needs a better way to decide which customers should be contacted first, which channel should be used, and when repeated outreach becomes wasteful. This project helps a campaign manager identify the customer segments and campaign patterns that lead to higher subscription conversion.
 
 **Core Business Question**
 
-> _State the single main question your Tableau dashboard and Python analysis will answer._
+> Which clients are most likely to subscribe to a term deposit, and how should the bank prioritize outreach to improve conversion?
 
 **Decision Supported**
 
-> _What action or decision will this analysis enable the stakeholder to take?_
+> Prioritize high-propensity client segments, use the best contact channel, and reduce repeated low-yield calling to improve campaign efficiency.
 
 ---
 
@@ -77,21 +77,28 @@ _Describe the sector context, the decision-maker this project serves, and the co
 
 | Attribute | Details |
 |---|---|
-| **Source Name** | _e.g. World Bank, data.gov.in, Kaggle (raw only)_ |
-| **Direct Access Link** | _Paste the direct download or access URL_ |
-| **Row Count** | _Must be greater than 5,000_ |
-| **Column Count** | _Must be greater than 8 meaningful columns_ |
-| **Time Period Covered** | _e.g. Jan 2019 to Dec 2023_ |
-| **Format** | _e.g. CSV, JSON, Excel_ |
+| **Source Name** | UCI Machine Learning Repository |
+| **Direct Access Link** | https://archive.ics.uci.edu/ml/datasets/bank+marketing |
+| **Row Count** | 45,211 |
+| **Column Count** | 17 raw columns, 22 cleaned / derived columns |
+| **Time Period Covered** | Historical bank marketing campaign data |
+| **Format** | CSV |
 
 **Key Columns Used**
 
 | Column Name | Description | Role in Analysis |
 |---|---|---|
-| _column_1_ | _What it means_ | _Used for KPI / filter / segmentation_ |
-| _column_2_ | _What it means_ | _Used for KPI / filter / segmentation_ |
-| _column_3_ | _What it means_ | _Used for KPI / filter / segmentation_ |
-| _column_4_ | _What it means_ | _Used for KPI / filter / segmentation_ |
+| `age` | Client age in years | Segmentation |
+| `job` | Occupation category | KPI / filter / segmentation |
+| `marital` | Marital status | Segmentation |
+| `education` | Education level | Segmentation |
+| `balance` | Average yearly balance | Financial segmentation |
+| `contact` | Contact communication type | Channel analysis |
+| `campaign` | Number of contacts in current campaign | Touch intensity analysis |
+| `previous` | Number of prior contacts | Campaign history |
+| `pdays` | Days since last contact | Prior-contact flag |
+| `poutcome` | Outcome of previous campaign | Root-cause analysis |
+| `y` | Subscription outcome | North-star KPI |
 
 For full column definitions, see [`docs/data_dictionary.md`](docs/data_dictionary.md).
 
@@ -101,9 +108,13 @@ For full column definitions, see [`docs/data_dictionary.md`](docs/data_dictionar
 
 | KPI | Definition | Formula / Computation |
 |---|---|---|
-| _e.g. Monthly Revenue Growth %_ | _What business outcome this tracks_ | _Show the exact formula or notebook reference_ |
-| _e.g. Customer Churn Rate_ | _What business outcome this tracks_ | _Show the exact formula or notebook reference_ |
-| _e.g. Repeat Purchase Rate_ | _What business outcome this tracks_ | _Show the exact formula or notebook reference_ |
+| Subscription Rate | Share of clients who subscribed | `sum(y) / count(rows)` |
+| Total Subscriptions | Total number of term-deposit subscriptions | `sum(y)` |
+| Avg. Contacts per Client | Average number of contacts in the current campaign | `mean(campaign)` |
+| Previously Contacted Rate | Share of clients contacted before | `mean(previously_contacted)` |
+| Avg. Yearly Balance | Mean account balance | `mean(balance)` |
+| Default Rate | Share of clients with default = yes | `count(default == yes) / count(rows)` |
+| Loan Rate | Share of clients with personal loan = yes | `count(loan == yes) / count(rows)` |
 
 Document KPI logic clearly in `notebooks/04_statistical_analysis.ipynb` and `notebooks/05_final_load_prep.ipynb`.
 
@@ -113,10 +124,10 @@ Document KPI logic clearly in `notebooks/04_statistical_analysis.ipynb` and `not
 
 | Item | Details |
 |---|---|
-| **Dashboard URL** | _Paste Tableau Public link here_ |
-| **Executive View** | _Describe the high-level KPI summary view_ |
-| **Operational View** | _Describe the detailed drill-down view_ |
-| **Main Filters** | _List the interactive filters used_ |
+| **Dashboard URL** | https://public.tableau.com/views/Bank_Marketing_Analysis_17773884323250/CUSTOMERSEGMENTATIONSUBSCRIPTIONPROFILE?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link |
+| **Executive View** | A high-level summary of overall subscription performance, customer segments, and balance distribution. |
+| **Operational View** | Drill-down views showing contact strategy, campaign touch bands, prior-contact lift, and risk/balance segmentation. |
+| **Main Filters** | Job, age group, education, marital status, balance band, contact type, campaign band, prior contact, previous outcome |
 
 Store dashboard screenshots in [`tableau/screenshots/`](tableau/screenshots/) and document the public links in [`tableau/dashboard_links.md`](tableau/dashboard_links.md).
 
@@ -124,30 +135,29 @@ Store dashboard screenshots in [`tableau/screenshots/`](tableau/screenshots/) an
 
 ## Key Insights
 
-_List 8-12 major findings from the analysis, written in decision language. Each insight should tell the reader what to think or act upon, not merely describe a chart._
-
-1. _Insight 1_
-2. _Insight 2_
-3. _Insight 3_
-4. _Insight 4_
-5. _Insight 5_
-6. _Insight 6_
-7. _Insight 7_
-8. _Insight 8_
+1. Students and retirees convert best, so they should be prioritized early in the call queue.
+2. Clients aged 65+ show the highest conversion, making age a strong targeting signal.
+3. Previously contacted clients convert far better than cold leads, so warm leads should be routed first.
+4. The cellular channel outperforms telephone, so outreach should be cellular-first wherever possible.
+5. Conversion drops as campaign touches increase, which means repeated calling becomes inefficient after a point.
+6. March, December, September, and October are the strongest months for conversion, so campaign timing matters.
+7. Higher balance bands convert better than low or negative balance bands, so financial strength is a useful filter.
+8. Prior campaign success is the strongest predictor of conversion, so previous outcome should be a premium routing rule.
+9. Blue-collar and service-oriented segments sit near the lower end of conversion, so they should not dominate premium outreach.
+10. Education and marital status matter, but they are secondary signals compared with prior contact and channel choice.
 
 ---
 
 ## Recommendations
 
-_Provide 3-5 specific, actionable business recommendations, each linked directly to an insight above._
-
 | # | Insight | Recommendation | Expected Impact |
 |---|---|---|---|
-| 1 | _Which insight does this address?_ | _What should the stakeholder do?_ | _What measurable impact do you expect?_ |
-| 2 | _Which insight does this address?_ | _What should the stakeholder do?_ | _What measurable impact do you expect?_ |
-| 3 | _Which insight does this address?_ | _What should the stakeholder do?_ | _What measurable impact do you expect?_ |
+| 1 | Students, retirees, and 65+ clients convert best | Prioritize these segments in the first call wave | Higher conversion rate |
+| 2 | Previously contacted clients perform much better | Build a warm-lead routing rule in CRM | Better lead efficiency |
+| 3 | Conversion drops with repeated touches | Cap repeated outreach after 3 calls | Lower wasted effort |
+| 4 | Cellular performs better than telephone | Make cellular the default contact channel | Improved response rate |
+| 5 | Certain months perform strongly | Schedule heavier campaigns in peak months | Better campaign yield |
 
----
 
 ## Repository Structure
 
