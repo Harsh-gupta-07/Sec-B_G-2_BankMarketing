@@ -49,8 +49,8 @@ If you are working in Google Colab:
 
 | Role | Name | GitHub Username |
 |---|---|---|
-| Project Lead | Harshvardhan Gupta | `Harshvardhan Gupta` |
-| Data Lead | Kartik Madaan | `madaankartik` |
+| Project Lead | Harshvardhan Gupta | `Harsh-gupta-07` |
+| Data Lead | Harshvardhan Gupta | `Harsh-gupta-07` |
 | ETL Lead | Dev Tyagi | `To be updated` |
 | Analysis Lead | Shitanshu Tiwari | `To be updated` |
 | Visualization Lead | Satwik Mani Tripathi | `To be updated` |
