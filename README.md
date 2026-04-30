@@ -51,10 +51,10 @@ If you are working in Google Colab:
 |---|---|---|
 | Project Lead | Harshvardhan Gupta | `Harsh-gupta-07` |
 | Data Lead | Harshvardhan Gupta | `Harsh-gupta-07` |
-| ETL Lead | Kartik Maddan | `madaankartik` |
+| ETL Lead | Shitanshu Tiwari | `sitanshu1018` |
 | Analysis Lead | Dev Tyagi | `devtyagi108` |
 | Visualization Lead | Harshvardhan Gupta | `Harsh-gupta-07` |
-| Strategy Lead | Shitanshu Tiwari | `sitanshu1018` |
+| Strategy Lead | Kartik Madaan | `madaankartik` |
 | PPT and Quality Lead | Kartik Madaan | `madaankartik` |
 
 ---
