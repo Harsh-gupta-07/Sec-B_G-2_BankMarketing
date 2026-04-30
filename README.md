@@ -50,9 +50,9 @@ If you are working in Google Colab:
 | Role | Name | GitHub Username |
 |---|---|---|
 | Project Lead | Harshvardhan Gupta | `Harsh-gupta-07` |
-| Data Lead | Harshvardhan Gupta | `Harsh-gupta-07` |
+| Data Lead | Dev Tyagi | `devtyagi108` |
 | ETL Lead | Shitanshu Tiwari | `sitanshu1018` |
-| Analysis Lead | Dev Tyagi | `devtyagi108` |
+| Analysis Lead | Harshvardhan Gupta | `Harsh-gupta-07` |
 | Visualization Lead | Harshvardhan Gupta | `Harsh-gupta-07` |
 | Strategy Lead | Kartik Madaan | `madaankartik` |
 | PPT and Quality Lead | Kartik Madaan | `madaankartik` |
